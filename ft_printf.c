@@ -6,15 +6,30 @@
 /*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 00:04:06 by mobushi           #+#    #+#             */
-/*   Updated: 2022/09/11 23:31:28 by mobushi          ###   ########.fr       */
+/*   Updated: 2022/09/12 22:34:47 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<stdarg.h>
 #include<unistd.h>
 #include<stdio.h>
 #include <stdlib.h>
 
+int ft_put_hexa(unsigned int input);
+
 //definition
+size_t ft_counter(int input)
+{
+	size_t i;
+	
+	i = 0;
+	while(input > 0)
+	{
+		input = input / 10;
+		i++;
+	}
+	return(i);
+}
 void	*ft_memset(void *buf, int ch, size_t n)
 {
 	unsigned char	*tmp;
@@ -122,6 +137,16 @@ int ft_put_string(char *c)
     return(--i);
 }
 
+int ft_put_pointer(unsigned long long input)
+{
+	ft_putchar('0',1);
+	ft_putchar('x',1);
+	ft_putchar('1',1);
+	ft_putchar('0',1);
+	return(ft_put_hexa((int)input) + 4);
+}
+
+
 int ft_put_int(int c)
 {
     char *tmp;
@@ -136,6 +161,83 @@ int ft_put_int(int c)
     return(--i);
 }
 
+int ft_put_uint(unsigned long long n)
+{
+	char *tmp;
+	size_t i;
+	i = 0;
+	tmp = ft_itoa(n);
+	while(tmp[i] != '\0')
+	{
+		ft_putchar(tmp[i],1);
+		i++;
+	}
+	return(--i);
+
+}
+
+
+int ft_put_hexa(unsigned int input)
+{
+	char *tmp;
+	tmp = ft_calloc(ft_counter(input + 1), sizeof(char));
+    if (!tmp)
+        return (0);
+	char hexa[16] = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
+	size_t i;
+	size_t j;
+	i = 0;
+	if(input == 0)
+	{
+		ft_putchar('0',1);
+		return(0);
+	}
+	while(input > 0)
+	{
+		tmp[i] = hexa[input % 16];
+		input = input / 16;
+		i++;
+	}
+	j = ++i;
+	while(i>0)
+		ft_putchar(tmp[--i],1);
+	free(tmp);
+	return(j -2);
+}
+
+int ft_put_lhexa(unsigned int input)
+{
+	char *tmp;
+	tmp = ft_calloc(ft_counter(input + 1), sizeof(char));
+    if (!tmp)
+        return (0);
+	char hexa[16] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+	size_t i;
+	size_t j;
+	i = 0;
+	if(input == 0)
+	{
+		ft_putchar('0',1);
+		return(0);
+	}
+	while(input > 0)
+	{
+		tmp[i] = hexa[input % 16];
+		input = input / 16;
+		i++;
+	}
+	j = ++i;
+	while(i>0)
+		ft_putchar(tmp[--i],1);
+	free(tmp);
+	return(j -2);
+}
+
+int ft_put_per(void)
+{
+	ft_putchar('%',1);
+	return(0);
+}
 
 //separater
 int ft_separate(int input,va_list ap)
@@ -144,14 +246,25 @@ int ft_separate(int input,va_list ap)
         return(ft_put_char(va_arg(ap,int)));
     else if(input == 's')
         return(ft_put_string(va_arg(ap,char *)));
-    
+    else if(input == 'p')
+		return(ft_put_pointer((unsigned long long)va_arg(ap, void *)));
     else if(input == 'd' || input == 'i')
         return(ft_put_int(va_arg(ap,int)));
     else if(input == 'u')
-        return(ft_put_uint(va_arg(ap,unsigned long long)))
+        return(ft_put_uint((unsigned long long)va_arg(ap, unsigned long long)));
+	else if(input == 'x')
+		return(ft_put_hexa(va_arg(ap,unsigned int)));
+	else if(input == 'X')
+		return(ft_put_lhexa(va_arg(ap,unsigned int)));
+	else if(input == '%')
+		return(ft_put_per());
 
     return(0);
 }
+
+
+
+
 
 
 //main
@@ -171,7 +284,6 @@ int ft_separate(int input,va_list ap)
             j += ft_separate(input[++i],ap);
         else
             ft_putchar(input[i],1);
-        //printf("i:%zu,j:%zu\n",i,j);
         j++;
         i++;
     }
@@ -182,5 +294,18 @@ int ft_separate(int input,va_list ap)
 
  int main(void)
  {
-    printf("%d",ft_printf("H%sKAKIN is %d %i","I",123456,987)); 
+/* 	 char *s = "Hello";
+	 char *c;
+	 c = s; */
+    //printf("%d",ft_printf("H%sKAKIN is %d %iis%u","I",123456,987,-10)); 
+	//printf("%d",ft_printf("H%sKAKIN is %d %iis%u","I",123456,987,-10)); 
+	printf("true:%d",printf("%u\n",-1));
+	printf("fals:%d",ft_printf("%u\n",-1));
+	//printf("%u\n",100);
+	//printf("%u\n",0);
+	//printf("%u\n",-1);
+	//printf("%u\n",);
+	//printf("%u\n",INT64_MAX);
+	
+ 
  }
