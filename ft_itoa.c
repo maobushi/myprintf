@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/16 00:04:06 by mobushi           #+#    #+#             */
-/*   Updated: 2022/09/12 23:19:25 by mobushi          ###   ########.fr       */
+/*   Created: 2022/09/12 23:14:49 by mobushi           #+#    #+#             */
+/*   Updated: 2022/09/12 23:15:03 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include"myprintf.h"
+char	*ft_itoa(int n)
+{
+	int		digit;
+	long	ln;
+	char	*out;
 
- int    ft_printf(const char *input, ...)
- {
-    va_list ap;
-    va_start(ap,input);
-
-    size_t i;
-    size_t j;
-
-    i = 0;
-    j = 0;
-    while(input[i] != '\0')
-    {
-        if(input[i] == '%')
-            j += ft_separate(input[++i],ap);
-        else
-            ft_putchar(input[i],1);
-        j++;
-        i++;
-    }
-
-    va_end(ap);
-    return(j);
- }
+	digit = ft_digit_count(n);
+	ln = (long)n;
+	out = (char *)ft_calloc(sizeof(char), digit + 1);
+	if (out == NULL)
+		return (NULL);
+	if (n == 0)
+		out[0] = '0';
+	if (ln < 0)
+	{
+		ln = ln * -1;
+		out[0] = '-';
+	}
+	while (ln > 0)
+	{
+		digit--;
+		out[digit] = ln % 10 + '0';
+		ln /= 10;
+	}
+	return (out);
+}
 
