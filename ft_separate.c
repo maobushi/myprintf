@@ -6,11 +6,11 @@
 /*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:04:26 by mobushi           #+#    #+#             */
-/*   Updated: 2022/09/12 23:24:10 by mobushi          ###   ########.fr       */
+/*   Updated: 2022/09/13 16:40:05 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"myprintf.h"
+#include "printf.h"
 
 int ft_separate(int input,va_list ap)
 {

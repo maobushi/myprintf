@@ -6,11 +6,12 @@
 /*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:15:40 by mobushi           #+#    #+#             */
-/*   Updated: 2022/09/12 23:24:32 by mobushi          ###   ########.fr       */
+/*   Updated: 2022/09/13 16:41:25 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"myprintf.h"
+#include "printf.h"
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*tmp;

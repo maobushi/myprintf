@@ -6,11 +6,12 @@
 /*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:08:38 by mobushi           #+#    #+#             */
-/*   Updated: 2022/09/12 23:24:17 by mobushi          ###   ########.fr       */
+/*   Updated: 2022/09/13 16:42:31 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"myprintf.h"
+// #include"myprintf.h"
+#include "printf.h"
 
 int ft_put_lhexa(unsigned int input)
 {

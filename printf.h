@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   myprintf.h                                         :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:05:39 by mobushi           #+#    #+#             */
-/*   Updated: 2022/09/12 23:24:08 by mobushi          ###   ########.fr       */
+/*   Updated: 2022/09/13 16:34:27 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef PRINTF_H
+# define PRINTF_H
 
-#include<stdarg.h>
-#include<unistd.h>
-#include<stdio.h>
+#include <stdarg.h>
+#include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 
@@ -35,5 +35,6 @@ int	ft_digit_count(int n);
 void	*ft_memset(void *buf, int ch, size_t n);
 size_t ft_counter(int input);
 int    ft_printf(const char *input, ...);
+void	ft_putchar(char c,size_t i);
 
 #endif
