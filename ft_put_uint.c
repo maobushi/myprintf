@@ -6,11 +6,10 @@
 /*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:10:45 by mobushi           #+#    #+#             */
-/*   Updated: 2022/09/13 19:08:37 by mobushi          ###   ########.fr       */
+/*   Updated: 2022/09/13 19:46:55 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include"myprintf.h"
 #include "ft_printf.h"
 
 unsigned int	ft_digit_ucount(unsigned int n)

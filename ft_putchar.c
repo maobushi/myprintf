@@ -6,11 +6,10 @@
 /*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:17:25 by mobushi           #+#    #+#             */
-/*   Updated: 2022/09/13 17:09:01 by mobushi          ###   ########.fr       */
+/*   Updated: 2022/09/13 19:46:45 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "myprintf.h"
 #include "ft_printf.h"
 
 void	ft_putchar(char c, size_t i)
