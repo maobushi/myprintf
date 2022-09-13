@@ -6,21 +6,24 @@
 /*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:13:19 by mobushi           #+#    #+#             */
-/*   Updated: 2022/09/13 16:42:51 by mobushi          ###   ########.fr       */
+/*   Updated: 2022/09/13 19:10:46 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include"myprintf.h"
-#include "printf.h"
+#include "ft_printf.h"
 
-int ft_put_string(char *c)
+int	ft_put_string(char *c)
 {
-    size_t i;
-    i = 0;
-    while(c[i] != '\0')
-    {
-        ft_putchar(c[i],1);
-        i++;
-    }
-    return(--i);
+	size_t	i;
+
+	i = 0;
+	if (c == NULL)
+		return ((write(STDOUT_FILENO, "(null)", 6)) - 1);
+	while (c[i] != '\0')
+	{
+		ft_putchar(c[i], 1);
+		i++;
+	}
+	return (--i);
 }

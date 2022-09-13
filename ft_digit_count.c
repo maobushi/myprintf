@@ -6,11 +6,11 @@
 /*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:16:27 by mobushi           #+#    #+#             */
-/*   Updated: 2022/09/13 16:41:47 by mobushi          ###   ########.fr       */
+/*   Updated: 2022/09/13 17:08:15 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_digit_count(int n)
 {

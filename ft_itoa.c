@@ -6,12 +6,12 @@
 /*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:14:49 by mobushi           #+#    #+#             */
-/*   Updated: 2022/09/13 16:41:55 by mobushi          ###   ########.fr       */
+/*   Updated: 2022/09/13 19:26:14 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 
-#include "printf.h"
 char	*ft_itoa(int n)
 {
 	int		digit;
@@ -38,4 +38,3 @@ char	*ft_itoa(int n)
 	}
 	return (out);
 }
-
