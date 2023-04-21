@@ -1,22 +1,10 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_itoa.c \
-	ft_put_hexa.c \
-	ft_put_string.c \
-	ft_memset.c \
-	ft_put_int.c \
-	ft_put_uint.c \
-	ft_calloc.c \
-	ft_put_lhexa.c \
-	ft_putchar.c \
+SRCS = ft_put_int.c \
 	ft_counter.c \
 	ft_printf.c \
-	ft_put_per.c \
 	ft_separate.c \
-	ft_digit_count.c \
-	ft_put_char.c \
-	ft_put_pointer.c \
 	ft_printf.c \
 	
 

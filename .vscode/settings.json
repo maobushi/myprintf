@@ -1,9 +1,0 @@
-{
-    "files.autoSave": "afterDelay",
-    "files.associations": {
-        "ft_printf.h": "c",
-        "printf.h": "c",
-        "__locale": "c",
-        "ios": "c"
-    }
-}
