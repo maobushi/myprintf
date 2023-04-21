@@ -6,13 +6,13 @@
 /*   By: mobushi <mobushi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:04:26 by mobushi           #+#    #+#             */
-/*   Updated: 2023/04/21 08:58:56 by mobushi          ###   ########.fr       */
+/*   Updated: 2023/04/21 09:04:20 by mobushi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_separate(int	input,	va_list	ap)
+int	ft_separate(int input,	va_list	ap)
 {
 	if (input == 'c')
 		return (ft_put_char(va_arg(ap, int)));
